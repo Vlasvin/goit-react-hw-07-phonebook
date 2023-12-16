@@ -1,8 +1,8 @@
 import { FilterLabel, FilterInput } from "components/Filter/Filter.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "../../redux/filterSlice";
-// import getAllContactsAction from "../../redux/Contacts/contactsOperations";
 // import { fetchContacts } from "Services/api";
+// import { getAllContactsAction } from "redux/Contacts/contactsOperations";
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ export const Filter = () => {
   };
   // const handleClick = async () => {
   //   try {
-  //     // await dispatch(getAllContactsAction());
+  //     await dispatch(getAllContactsAction);
 
   //     const data = await fetchContacts();
   //     console.log(data);
