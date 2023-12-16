@@ -10,7 +10,7 @@ export const App = () => {
       <ContactForm />
       <h2>Contacts</h2>
       <Filter></Filter>
-      <ContactList></ContactList>
+      {/* <ContactList></ContactList> */}
     </Div>
   );
 };

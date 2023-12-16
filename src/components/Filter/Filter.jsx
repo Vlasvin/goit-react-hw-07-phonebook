@@ -1,12 +1,16 @@
 import { FilterLabel, FilterInput } from "components/Filter/Filter.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "../../redux/filterSlice";
+import getAllContactsAction from "../../redux/Contacts/contactsOperations";
 
 export const Filter = () => {
   const dispatch = useDispatch();
   const filterName = useSelector((state) => state.filter.value);
   const changeFilter = (e) => {
     dispatch(setFilter(e.currentTarget.value.trim()));
+  };
+  const handelClick = () => {
+    getAllContactsAction();
   };
 
   return (
@@ -17,6 +21,9 @@ export const Filter = () => {
         value={filterName}
         onChange={changeFilter}
       ></FilterInput>
+      <button type="button" onClick={handelClick}>
+        Fetch
+      </button>
     </FilterLabel>
   );
 };
