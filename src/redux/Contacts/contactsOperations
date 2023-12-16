@@ -3,12 +3,12 @@ import { fetchContacts, addContacts, deleteContacts } from "Services/api";
 
 export const getAllContactsAction = createAsyncThunk(
   "contacts/fetchAll",
-  async (_, { rejectWithValue }) => {
+  async () => {
     try {
       const data = await fetchContacts();
       return data;
     } catch (error) {
-      return rejectWithValue(`Ooops! Wrong... Try again or update browser`);
+      // return rejectWithValue(`Ooops! Wrong... Try again or update browser`);
     }
   }
 );

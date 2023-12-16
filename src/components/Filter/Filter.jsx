@@ -1,7 +1,8 @@
 import { FilterLabel, FilterInput } from "components/Filter/Filter.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "../../redux/filterSlice";
-import getAllContactsAction from "../../redux/Contacts/contactsOperations";
+// import getAllContactsAction from "../../redux/Contacts/contactsOperations";
+// import { fetchContacts } from "Services/api";
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -9,9 +10,16 @@ export const Filter = () => {
   const changeFilter = (e) => {
     dispatch(setFilter(e.currentTarget.value.trim()));
   };
-  const handelClick = () => {
-    getAllContactsAction();
-  };
+  // const handleClick = async () => {
+  //   try {
+  //     // await dispatch(getAllContactsAction());
+
+  //     const data = await fetchContacts();
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.error("Error fetching contacts:", error);
+  //   }
+  // };
 
   return (
     <FilterLabel>
@@ -21,9 +29,9 @@ export const Filter = () => {
         value={filterName}
         onChange={changeFilter}
       ></FilterInput>
-      <button type="button" onClick={handelClick}>
+      {/* <button type="button" onClick={handleClick}>
         Fetch
-      </button>
+      </button> */}
     </FilterLabel>
   );
 };
