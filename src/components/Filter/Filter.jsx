@@ -17,9 +17,6 @@ export const Filter = () => {
         value={filterName}
         onChange={changeFilter}
       ></FilterInput>
-      {/* <button type="button" onClick={handleClick}>
-        Fetch
-      </button> */}
     </FilterLabel>
   );
 };

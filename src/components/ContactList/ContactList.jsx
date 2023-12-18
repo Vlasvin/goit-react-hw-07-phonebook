@@ -1,30 +1,29 @@
 import { ContList } from "components/ContactList/ContactList.styled";
 import { Contact } from "components/Contact/Contact";
 import { useSelector, useDispatch } from "react-redux";
-import { contactsSlice } from "../../redux/Contacts/contactsSlice";
-// import { deleteContact } from "../../redux/Contacts/contactsSlice";
+import { deleteContactAction } from "../../redux/Contacts/contactsOperations";
+import {
+  selectVisibleContacts,
+  selectIsLoading,
+  selectError,
+} from "../../redux/Selectors/selectors";
 
 export const ContactList = () => {
-  const filter = useSelector((state) => state.filter.filter);
-  const contacts = useSelector((state) => state.contacts.item);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
-  console.log(contacts);
 
   const handleDeleteContact = (id) => {
-    dispatch(contactsSlice.actions.deleteContact(id));
+    dispatch(deleteContactAction(id));
   };
 
-  const getVisibleContacts = (filter) => {
-    if (!contacts) {
-      return [];
-    }
-    const normalizedFilter = filter ? filter.toLowerCase() : "";
-    return contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(normalizedFilter)
-    );
-  };
-
-  const visibleContacts = getVisibleContacts(filter);
+  const visibleContacts = useSelector(selectVisibleContacts);
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+  if (error) {
+    return <p style={{ color: "red" }}>Error: {error}</p>;
+  }
 
   return (
     <ContList>

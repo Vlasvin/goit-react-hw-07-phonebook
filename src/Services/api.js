@@ -10,7 +10,7 @@ export async function addContact(item) {
   const { data } = await axios.post(`/`, item);
   return data;
 }
-export async function deleteContact(item) {
-  const { data } = await axios.get(`/${item.id}`);
+export async function deleteContact(id) {
+  const { data } = await axios.delete(`/${id}`);
   return data;
 }

@@ -7,9 +7,7 @@ export const getAllContactsAction = createAsyncThunk(
     try {
       const data = await fetchContacts();
       return data;
-    } catch (error) {
-      // return rejectWithValue(`Ooops! Wrong... Try again or update browser`);
-    }
+    } catch (error) {}
   }
 );
 export const addContactAction = createAsyncThunk(
@@ -17,7 +15,6 @@ export const addContactAction = createAsyncThunk(
   async (newContact, { rejectWithValue }) => {
     try {
       const data = await addContact(newContact);
-      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(`Ooops! Wrong... Try again or update browser`);
@@ -28,9 +25,10 @@ export const deleteContactAction = createAsyncThunk(
   "contacts/deleteContact",
   async (id, { rejectWithValue }) => {
     try {
-      const data = await deleteContact();
-      console.log(data);
-      return data;
-    } catch (error) {}
+      await deleteContact(id);
+      return id;
+    } catch (error) {
+      return rejectWithValue("Failed to delete contact. Please try again.");
+    }
   }
 );
