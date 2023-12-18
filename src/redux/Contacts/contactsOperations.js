@@ -14,9 +14,9 @@ export const getAllContactsAction = createAsyncThunk(
 );
 export const addContactAction = createAsyncThunk(
   "contacts/addContact",
-  async (data, { rejectWithValue }) => {
+  async (newContact, { rejectWithValue }) => {
     try {
-      const data = await addContact();
+      const data = await addContact(newContact);
       console.log(data);
       return data;
     } catch (error) {
