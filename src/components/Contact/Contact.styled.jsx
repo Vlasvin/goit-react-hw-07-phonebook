@@ -5,6 +5,14 @@ export const ContItem = styled.li`
   gap: 20px;
   align-items: center;
   flex-basis: calc(50% - 10px);
+
+  @media (max-width: 768px) {
+    flex-basis: 100%;
+  }
+  @media (max-width: 428px) {
+    flex-direction: column;
+    flex-basis: none;
+  }
 `;
 export const ContP = styled.p`
   font-size: 18px;

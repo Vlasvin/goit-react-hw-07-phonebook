@@ -18,12 +18,20 @@ export const ContForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 400px;
+  margin: 0 auto;
   gap: 20px;
   border-radius: 6px;
   border: 1px solid #121214;
   box-shadow: 0 0 10px rgba(235, 227, 227, 0.1);
-  padding: 20px;
+  padding: 20px 40px;
   background-color: white;
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+  }
+  @media (max-width: 428px) {
+    max-width: 200px;
+  }
 `;
 
 export const ContLabel = styled.label`
@@ -38,6 +46,13 @@ export const ContInput = styled.input`
   width: 300px;
   height: 20px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 200px;
+  }
+  @media (max-width: 428px) {
+    max-width: 100px;
+  }
 `;
 export const AddButton = styled.button`
   border-radius: 6px;
