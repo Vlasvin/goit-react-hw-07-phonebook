@@ -18,14 +18,15 @@ export const ContactForm = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.currentTarget;
+    const trimmedValue = value.trim();
     if (
-      (name === "name" && /^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ' ]*$/.test(value)) ||
-      (name === "number" && /^[0-9-]*$/.test(value))
+      (name === "name" && /^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ' ]*$/.test(trimmedValue)) ||
+      (name === "number" && /^[0-9-]*$/.test(trimmedValue))
     ) {
       if (name === "name") {
-        setName(value);
+        setName(trimmedValue);
       } else if (name === "number") {
-        setNumber(value);
+        setNumber(trimmedValue);
       }
     }
   };
