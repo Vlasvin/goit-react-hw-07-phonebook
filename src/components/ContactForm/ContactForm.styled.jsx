@@ -11,6 +11,7 @@ export const Div = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 60px;
 `;
 
 export const ContForm = styled.form`
