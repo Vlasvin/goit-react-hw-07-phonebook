@@ -16,6 +16,7 @@ export const ContItem = styled.li`
 `;
 export const ContP = styled.p`
   font-size: 18px;
+  margin-right: auto;
 `;
 export const ContBtn = styled.button`
   border-radius: 6px;
