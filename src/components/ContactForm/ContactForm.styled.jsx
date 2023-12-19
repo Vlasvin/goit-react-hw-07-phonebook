@@ -6,7 +6,7 @@ export const Div = styled.div`
   box-shadow: 0 0 10px rgba(235, 227, 227, 0.1);
   padding: 20px;
   background-color: #e0d3d3f8;
-  width: 500px;
+  width: 900px;
   display: flex;
   align-items: center;
   justify-content: center;

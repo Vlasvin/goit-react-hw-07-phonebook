@@ -9,6 +9,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./images/pexels-fwstudio-172289-min.jpg");
   background-size: cover;
+  height: 100%;
+  margin: 0;
+  overflow: auto;
 }
 
 code {

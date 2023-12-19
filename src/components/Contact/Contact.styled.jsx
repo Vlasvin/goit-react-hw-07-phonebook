@@ -4,6 +4,7 @@ export const ContItem = styled.li`
   display: flex;
   gap: 20px;
   align-items: center;
+  flex-basis: calc(50% - 10px);
 `;
 export const ContP = styled.p`
   font-size: 18px;
@@ -30,6 +31,7 @@ export const ContBtn = styled.button`
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
+  margin-left: auto;
 
   &:active,
   &:hover {

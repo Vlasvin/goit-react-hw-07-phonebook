@@ -1,7 +1,11 @@
+import React, { useEffect } from "react";
 import { ContList } from "components/ContactList/ContactList.styled";
 import { Contact } from "components/Contact/Contact";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteContactAction } from "../../redux/Contacts/contactsOperations";
+import {
+  deleteContactAction,
+  getAllContactsAction,
+} from "../../redux/Contacts/contactsOperations";
 import {
   selectVisibleContacts,
   selectIsLoading,
@@ -12,6 +16,10 @@ export const ContactList = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllContactsAction());
+  }, [dispatch]);
 
   const handleDeleteContact = (id) => {
     dispatch(deleteContactAction(id));
